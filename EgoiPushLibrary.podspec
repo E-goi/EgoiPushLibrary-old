@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "EgoiPushLibrary"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "Allows to use the Push Notification Channel of the E-Goi company."
 
 # This description is used to generate tags and improve search results.
@@ -32,8 +32,4 @@ This library should be included in your project. After configure that with the i
   s.resource_bundles = {
     'EgoiPushLibrary' => ['Pod/Assets/*.png']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

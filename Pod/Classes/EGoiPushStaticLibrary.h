@@ -78,6 +78,13 @@
                           negativeMessage:(NSString *)noMessage;
 
 /**
+ *  Register the device in two steps without the alertview
+ *
+ *  @param the value for the registration
+ */
+- (void)registerDeviceInTwoStepsWithFieldValue:(NSString *)value;
+
+/**
  *  Called when the app did registered the device for push notifications with success
  *
  *  @param the device token

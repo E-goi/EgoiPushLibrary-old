@@ -159,6 +159,18 @@ static dispatch_once_t onceToken;
     }
 }
 
+- (void)registerDeviceInTwoStepsWithFieldValue:(NSString *)value
+{
+    if (!value)
+    {
+        return;
+    }
+    
+    [[EGoiCommunicationManager sharedInstance]
+     applicationRegisteredDeviceForPushNotificationInTwoSteps:self.twoStepRegistrationFieldName
+     fieldValue:value];
+}
+
 #pragma mark -
 #pragma mark - Alertview delegate (two steps registration)
 
