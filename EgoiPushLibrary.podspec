@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "EgoiPushLibrary"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of EgoiPushLibrary."
+  s.version          = "1.0.0"
+  s.summary          = "Allows to use the Push Notification Channel of the E-Goi company."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,16 +17,15 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+This library should be included in your project. After configure that with the information provided from your E-Goi account, you are able to use that to receive the Push Notification messages.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/EgoiPushLibrary"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/migchaves/EgoiPushLibrary"
   s.license          = 'MIT'
-  s.author           = { "Miguel Chaves" => "miguelangeloncp@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/EgoiPushLibrary.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { "Miguel Chaves" => "mchaves.apps@gmail.com" }
+  s.source           = { :git => "https://github.com/migchaves/EgoiPushLibrary.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'

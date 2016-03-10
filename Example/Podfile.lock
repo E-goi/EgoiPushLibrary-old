@@ -1,0 +1,14 @@
+PODS:
+  - EgoiPushLibrary (0.1.0)
+
+DEPENDENCIES:
+  - EgoiPushLibrary (from `../`)
+
+EXTERNAL SOURCES:
+  EgoiPushLibrary:
+    :path: ../
+
+SPEC CHECKSUMS:
+  EgoiPushLibrary: 762b7b9c548088c5cc77f6b906e1208f510e904f
+
+COCOAPODS: 0.39.0
