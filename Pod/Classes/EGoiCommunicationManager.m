@@ -227,7 +227,7 @@ static dispatch_once_t onceToken;
 {
     NSDictionary *dic = @{
                           @"messageId": messageID,
-                          @"deviceId": self.deviceID,
+                          @"deviceId": [self getStoredDeviceID],
                           @"applicationId": self.appId,
                           @"latitude": [NSNumber numberWithFloat:[self.latitude floatValue]],
                           @"longitude": [NSNumber numberWithFloat:[self.longitude floatValue]]
@@ -263,6 +263,7 @@ static dispatch_once_t onceToken;
             if (responseJSON) {
                 if ([responseJSON objectForKey:@"deviceId"]) {
                     self.deviceID = [responseJSON objectForKey:@"deviceId"];
+                    [self saveDeviceId:self.deviceID];
                     [EGHelper log:@"Device registered"];
                 }
             }
@@ -270,6 +271,40 @@ static dispatch_once_t onceToken;
             [EGHelper log:@"Event not registered"];
         }
     }
+}
+
+#pragma mark -
+#pragma mark - Private
+
+- (NSString *)getStoredDeviceID
+{
+    if (self.deviceID != nil) {
+        return self.deviceID;
+    } else {
+        return [self getUserDefaultsDeviceID];
+    }
+}
+
+- (NSString *)getUserDefaultsDeviceID
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([userDefaults objectForKey:@"egoi.push.library.deviceid"] != nil) {
+        return [userDefaults objectForKey:@"egoi.push.library.deviceid"];
+    } else {
+        return @"0";
+    }
+}
+
+- (void)saveDeviceId:(NSString *)device
+{
+    if (!device) {
+        return;
+    }
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:device forKey:@"egoi.push.library.deviceid"];
+    [userDefaults synchronize];
 }
 
 @end
