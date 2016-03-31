@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "EgoiPushLibrary"
-  s.version          = "1.0.1"
+  s.version          = "1.0.2"
   s.summary          = "Allows to use the Push Notification Channel of the E-Goi company."
 
 # This description is used to generate tags and improve search results.
